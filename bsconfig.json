@@ -1,0 +1,17 @@
+{
+  "name": "rescript-mngutils",
+  "version": "1.0.1",
+  "sources": {
+    "dir" : "src",
+    "subdirs" : true
+  },
+  "bs-dependencies": [
+    "@ryyppy/rescript-promise"
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ]
+}
