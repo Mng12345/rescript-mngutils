@@ -1,9 +1,10 @@
 {
   "name": "rescript-mngutils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "zm",
   "license": "MIT",
+  "repository": "https://github.com/Mng12345/rescript-mngutils",
   "devDependencies": {
     "rescript": "^9.1.4"
   },

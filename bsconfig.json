@@ -1,6 +1,6 @@
 {
   "name": "rescript-mngutils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "sources": {
     "dir" : "src",
     "subdirs" : true
