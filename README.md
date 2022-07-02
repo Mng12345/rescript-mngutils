@@ -1,1 +1,1 @@
-a util lib for rescript
+a rescript utils library
