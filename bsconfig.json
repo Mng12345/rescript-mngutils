@@ -1,17 +1,28 @@
 {
   "name": "rescript-mngutils",
   "version": "1.0.3",
-  "sources": {
-    "dir" : "src",
-    "subdirs" : true
-  },
+  "sources": [
+    {
+      "dir" : "src",
+      "subdirs" : true
+    },
+    {
+      "dir": "test",
+      "subdirs": true
+    }
+  ],
   "bs-dependencies": [
-    "@ryyppy/rescript-promise"
+    "@ryyppy/rescript-promise",
+    "rescript-test"
+  ],
+  "bs-dev-dependencies": [
+    
   ],
   "package-specs": [
     {
       "module": "commonjs",
       "in-source": true
     }
-  ]
+  ],
+  "suffix": ".bs.js"
 }

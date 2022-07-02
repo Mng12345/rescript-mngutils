@@ -5,14 +5,18 @@
   "author": "zm",
   "license": "MIT",
   "repository": "https://github.com/Mng12345/rescript-mngutils",
-  "keywords": ["rescript"],
+  "keywords": [
+    "rescript"
+  ],
   "description": "a rescript utils library",
   "devDependencies": {
-    "rescript": "^9.1.4"
+    "rescript": "^9.1.4",
+    "rescript-test": "^3.2.0"
   },
   "scripts": {
     "re:start": "rescript build -w",
-    "run:playground": "node ./src/MngUtils__Playground.js"
+    "run:playground": "node ./src/MngUtils__Playground.js",
+    "test": "retest test/**/*.bs.js"
   },
   "dependencies": {
     "@ryyppy/rescript-promise": "^2.1.0"

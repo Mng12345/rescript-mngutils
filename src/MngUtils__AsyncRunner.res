@@ -106,8 +106,19 @@ let runWithPollTimeWithTimeout = (runner, pollTime, timeout) => {
           // wait the slot executed done
           Js.Global.setTimeout(() => {
             Promise.all(
-              slot.contents->Belt.Array.keepMap(task => task->Belt.Option.map(task => task())),
-            )->ignore
+              slot.contents->Belt.Array.keepMap(task => task->Belt.Option.map(task => task)),
+            )
+            ->Promise.then(result => {
+              result->Belt.Array.forEach(item => {
+                let (result, slotIndex, taskIndex) = item
+                // update results
+                runner.results[taskIndex] = Some(result)
+                // update slot
+                slot.contents[slotIndex] = None
+              })
+              Promise.resolve()
+            })
+            ->ignore
           }, 0)->ignore
         } else {
           // check if the slot has empty position
@@ -118,17 +129,15 @@ let runWithPollTimeWithTimeout = (runner, pollTime, timeout) => {
                   // get a task from tasks
                   let task = tasks->Js.Array.shift
                   task->Belt.Option.map(((taskIndex, task)) => {
-                    () => {
-                      switch timeout {
-                      | Some(timeout) =>
-                        executeTimeout(task, timeout)->Promise.then(result => {
-                          Promise.resolve((result, index, taskIndex))
-                        })
-                      | None =>
-                        execute(task)->Promise.then(result => {
-                          Promise.resolve((result, index, taskIndex))
-                        })
-                      }
+                    switch timeout {
+                    | Some(timeout) =>
+                      executeTimeout(task, timeout)->Promise.then(result => {
+                        Promise.resolve((result, index, taskIndex))
+                      })
+                    | None =>
+                      execute(task)->Promise.then(result => {
+                        Promise.resolve((result, index, taskIndex))
+                      })
                     }
                   })
                 }
@@ -143,7 +152,7 @@ let runWithPollTimeWithTimeout = (runner, pollTime, timeout) => {
           })
           if hasTask {
             Promise.race(
-              slot.contents->Belt.Array.keepMap(task => task->Belt.Option.map(task => task())),
+              slot.contents->Belt.Array.keepMap(task => task->Belt.Option.map(task => task)),
             )
             ->Promise.then(result => {
               let (result, slotIndex, taskIndex) = result
