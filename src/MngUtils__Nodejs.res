@@ -17,7 +17,7 @@ module Fs = {
   }
 }
 
-@module("node:fs/promises") external readdir: string => Promise.t<array<string>> = "readdir"
+@module("fs/promises") external readdir: string => Promise.t<array<string>> = "readdir"
 
 module Dirent = {
   type t
@@ -32,7 +32,7 @@ module Dirent = {
   external name: t => string = "name"
 }
 
-@module("node:fs/promises")
+@module("fs/promises")
 external readdirWithFileTypes: (string, 'options) => Promise.t<array<Dirent.t>> = "readdir"
 
 module Stats = {
@@ -45,7 +45,7 @@ module Stats = {
   external isFile: t => bool = "isFile"
 }
 
-@module("node:fs/promises")
+@module("fs/promises")
 external stat: string => Promise.t<Stats.t> = "stat"
 
 @module("fs/promises")
