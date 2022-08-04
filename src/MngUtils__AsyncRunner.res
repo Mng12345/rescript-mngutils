@@ -1,7 +1,7 @@
 type t<'value> = {
   parallel: int,
   tasks: array<(int, unit => Promise.t<'value>)>,
-  results: array<option<MngUtils__Result.t<'value, exn>>>,
+  results: array<option<Belt.Result.t<'value, exn>>>,
 }
 
 let make = (tasks, parallel) => {
@@ -17,10 +17,10 @@ exception Error(string)
 let execute = task => {
   task()
   ->Promise.then(result => {
-    Promise.resolve(MngUtils__Result.Ok(result))
+    Promise.resolve(Belt.Result.Ok(result))
   })
   ->Promise.catch(exn => {
-    Promise.resolve(MngUtils__Result.Err(exn))
+    Promise.resolve(Belt.Result.Error(exn))
   })
 }
 
@@ -40,7 +40,7 @@ let executeTimeout = (task, timeout) => {
         | Some(timerId) => Js.Global.clearTimeout(timerId)->ignore
         }
         alreadyResolved := true
-        resolve(. MngUtils__Result.Ok(result))
+        resolve(. Belt.Result.Ok(result))
       }
       Promise.resolve()
     })
@@ -53,7 +53,7 @@ let executeTimeout = (task, timeout) => {
         | Some(timeoutId) => Js.Global.clearTimeout(timeoutId)->ignore
         }
         alreadyResolved := true
-        resolve(. MngUtils__Result.Err(exn))
+        resolve(. Belt.Result.Error(exn))
       }
       Promise.resolve()
     })
@@ -64,7 +64,7 @@ let executeTimeout = (task, timeout) => {
         if alreadyResolved.contents {
           ignore()
         } else {
-          resolve(. MngUtils__Result.Err(Error("time out.")))
+          resolve(. Belt.Result.Error(Error("time out.")))
         }
       }, timeout)->Some
   })
