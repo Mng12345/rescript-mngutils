@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@ryyppy/rescript-promise@^2.1.0":
+"@ryyppy/rescript-promise@^2.0.0", "@ryyppy/rescript-promise@^2.1.0":
   version "2.1.0"
   resolved "https://registry.npmjs.org/@ryyppy/rescript-promise/-/rescript-promise-2.1.0.tgz#a33861274c41360cfbe872cf489f3dcb8dd526e6"
   integrity sha512-+dW6msBrj2Lr2hbEMX+HoWCvN89qVjl94RwbYWJgHQuj8jm/izdPC0YzxgpGoEFdeAEW2sOozoLcYHxT6o5WXQ==
@@ -568,6 +568,13 @@ request@^2.88.2:
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
+rescript-js@0.5.15:
+  version "0.5.15"
+  resolved "https://registry.npmmirror.com/rescript-js/-/rescript-js-0.5.15.tgz#0f539453fed483e6268710bd0000c895fbc7ad3f"
+  integrity sha512-T5eNm74C16xTQasyfNMGXv4HLBPWvBsN5NKyNJL/2IuboQbmukOzmPiRJ/g2/HbQ1Al7ZPVX9w8vOysMx2HbRQ==
+  dependencies:
+    "@ryyppy/rescript-promise" "^2.0.0"
+
 rescript-test@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/rescript-test/-/rescript-test-3.2.0.tgz#2ff4118fd3c600786dd622572774946972878de8"
@@ -576,10 +583,10 @@ rescript-test@^3.2.0:
     glob "^7.2.0"
     jsdom "16.4.0"
 
-rescript@^9.1.4:
-  version "9.1.4"
-  resolved "https://registry.npmjs.org/rescript/-/rescript-9.1.4.tgz#1eb126f98d6c16942c0bf0df67c050198e580515"
-  integrity sha512-aXANK4IqecJzdnDpJUsU6pxMViCR5ogAxzuqS0mOr8TloMnzAjJFu63fjD6LCkWrKAhlMkFFzQvVQYaAaVkFXw==
+rescript@^10.1.3:
+  version "10.1.3"
+  resolved "https://registry.npmmirror.com/rescript/-/rescript-10.1.3.tgz#0ff208cef09ea1f8ad38efc171c4942eca72d444"
+  integrity sha512-5qaf63As6nkbrMRJ85kZ0ifLzKAGPOGLuoJ4zFVGZIp4oMePRt6bCKWAIX7zgbRDfRPa3jSu+EnoY2873gxaIA==
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.2:
   version "5.2.1"

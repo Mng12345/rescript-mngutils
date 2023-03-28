@@ -3,8 +3,8 @@
   "version": "1.0.9",
   "sources": [
     {
-      "dir" : "src",
-      "subdirs" : true
+      "dir": "src",
+      "subdirs": true
     },
     {
       "dir": "test",
@@ -16,7 +16,7 @@
     "rescript-test"
   ],
   "bs-dev-dependencies": [
-    
+    "rescript-js"
   ],
   "package-specs": [
     {

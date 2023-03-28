@@ -58,4 +58,14 @@ module Fs = {
 
   @module("fs/promises")
   external readFile: (string, 'options) => Promise.t<string> = "readFile"
+
+  @module("fs/promises")
+  external rm: string => Promise.t<unit> = "rm"
+}
+
+module Path = {
+  @module("path") external resolve2: (string, string) => string = "resolve"
+  @module("path") external resolve3: (string, string, string) => string = "resolve"
+  @module("path") external resolve4: (string, string, string) => string = "resolve"
+  @module("path") external resolve5: (string, string, string) => string = "resolve"
 }

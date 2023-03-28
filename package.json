@@ -10,10 +10,10 @@
   ],
   "description": "a rescript utils library",
   "devDependencies": {
-    "rescript": "^9.1.4"
+    "rescript-js": "0.5.15"
   },
   "scripts": {
-    "re:start": "rescript build -w",
+    "res:start": "rescript build -w",
     "run:playground": "node ./src/MngUtils__Playground.js",
     "test": "retest test/**/*.bs.js"
   },
@@ -21,6 +21,7 @@
     "@ryyppy/rescript-promise": "^2.1.0",
     "axios": "^0.27.2",
     "dayjs": "^1.11.4",
+    "rescript": "^10.1.3",
     "rescript-test": "^3.2.0"
   }
 }

@@ -13,7 +13,6 @@ Test.testAsync("readFile", 30000, (function (cb) {
               Curry._2(cb, 0, undefined);
               return Promise.resolve(undefined);
             });
-        
       }));
 
 /*  Not a pure module */

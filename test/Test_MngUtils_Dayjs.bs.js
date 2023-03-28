@@ -7,7 +7,6 @@ var Dayjs = require("dayjs");
 Test.test("MngUtils_Dayjs", (function (param) {
         var date = Dayjs("2022/08/09");
         console.log("date: ", date.format("YYYY-MM-DD"));
-        
       }));
 
 /*  Not a pure module */
