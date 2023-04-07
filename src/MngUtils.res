@@ -5,3 +5,5 @@ module Async = MngUtils__Async
 module Axios = MngUtils__Axios
 module Dayjs = MngUtils__Dayjs
 module Thread = MngUtils__Thread
+module Retry = MngUtils__Retry
+module Map = MngUtils__Map
