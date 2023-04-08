@@ -14,6 +14,12 @@ let unwrap = result => {
 let expect = (result, expect: string) => {
   switch result {
   | Ok(value) => value
-  | Err(exn) => raise(expect->Js.Exn.anyToExnInternal)
+  | Err(exn) =>
+    raise(
+      {
+        "expect": expect,
+        "exn": exn,
+      }->Js.Exn.anyToExnInternal,
+    )
   }
 }
